@@ -6,9 +6,9 @@ import datetime
 import sqlite3
 
 
-def log_data(pomiar3,database):
+def log_data(pomiar3):
 
-    conn=sqlite3.connect(database)
+    conn=sqlite3.connect('lemp.db')
     curs=conn.cursor()
 
     curs.execute("INSERT INTO pomy values(datetime('now'), (?))", (pomiar3,))
@@ -39,7 +39,7 @@ def main():
 			pomiar2=instrument.read_register(0, 1)#napiecie*prad
 			pomiar3=instrument.read_register(3, 1)#kw
 				
-			log_data(pomiar3,lemp.db)
+			log_data(pomiar3)
 			r=open('text.txt','a')
 			r.write("udalo zaladowac o " +	str(datetime.datetime.now()) + "\n")
 			r.close()	
