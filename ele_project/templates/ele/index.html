@@ -5,8 +5,21 @@
 	</head>
 
 	<body>
-		<h1>witam w ...</h1>
-		witrynie<strong>{{boldmessage}}</strong><br/>
+		<h1>witam na witrynie monitoringu zurzycia energii elektrycznej ELE!!</h1>
+		
+		{% if nazwy %}
+			<ul>
+				{% for nazwa in nazwy %}
+				<li><a href="/ele/nazwa/{{nazwa.slug}}">{{nazwa.name}}</a></li>
+				{%endfor %}
+			</ul>
+		{% else %}
+			<strong>nie ma obiektow</strong>
+		{% endif %}		
+
+
+
+
 		<a href = "/ele/lol/">hehe</a><br />
 	</body>
 </html>

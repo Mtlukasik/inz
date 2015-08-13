@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ELE</title>
+	</head>
+	<body>
+		<h1>{{nazwa_name}}</h1>
+		{% if nazwa %}
+			{% if itemki %}
+		<ul>
+			{%for page in pages%}
+			<li><a href = "{{itemki.url}}">{{itemki.name}}</li>
+			{%endfor%}
+		</ul>
+			{%else%}
+			<strong>narazie bez itemkow</strong>
+			{% endif %} 
+		{% else %}
+			the specified nazwa {{nazwa_name}} does not exist!
+		{%endif %}
+	</body>
+</html>
