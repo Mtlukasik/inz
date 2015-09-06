@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>ELE</title>
-	</head>
+    <head>
+        <title>Ele</title>
+    </head>
 
-	<body>
-		<h1>witam na witrynie monitoringu zurzycia energii elektrycznej ELE!!</h1>
-		
-		{% if nazwy %}
-			<ul>
-				{% for nazwa in nazwy %}
-				<li><a href="/ele/nazwa/{{nazwa.slug}}">{{nazwa.name}}</a></li>
-				{%endfor %}
-			</ul>
-		{% else %}
-			<strong>nie ma obiektow</strong>
-		{% endif %}		
+    <body>
+        <h1>Witaj swiecie</h1>
 
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
 
-
-
-		<a href = "/ele/lol/">hehe</a><br />
-	</body>
+                <li><a href="/ele/category/{{ category.slug }}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+       {% else %}
+            <strong>There are no categories present.</strong>
+       {% endif %}
+	<a href="/ele/ostronie/">O stronie</a>
+    </body>
 </html>

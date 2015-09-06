@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ele</title>
+    </head>
+
+    <body>
+        <h1>{{ category_name }}</h1>
+        {% if category %}
+            {% if pages %}
+            <ul>
+                {% for page in pages %}
+                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>Nie ma stron w tej kategorii</strong>
+            {% endif %}
+        {% else %}
+            Podana kategoria: {{ category_name }} nie istnieje!
+        {% endif %}
+    </body>
+</html>
+
